@@ -21,23 +21,30 @@ def triangular(hight, width):
         if width%2 == 0 or width > hight * 2:
             print("Sorry we can'nt print your rectangle")
         else:
-            linesNum = oddNum(width) #מספר החזרות בכל סט כוכבים
-            print(linesNum , "linesnum")
-            starsnum  = width       # מספר הכוכבים בכל שורה
-            for starsnum in range(1, width+1, 2): #לולאה שעוברת על המגדל ומדפיסה את הכוכבים
-                if starsnum == width or starsnum == 1:
-                    print(int((width - starsnum) / 2) * " " , "*" * starsnum )
-                elif starsnum == 3:
-                    while index < ((int((hight-2) /(linesNum))) + int(((hight-2) % (linesNum)))):
-                        print(int((width - starsnum)/2) * " ",starsnum * "*" )
-                        index += 1
-                    index = 0
-                else:
-                    while index < int((hight-2) / (linesNum)):
-                        print(int(((width - starsnum)/2)) * " ",starsnum * "*")
-                        index+=1
-                    index = 0
-
+            f = 1
+            if (width == 3):   
+                print(" * ")
+                while f < hight:
+                    print("***")
+                    f+=1
+            else:
+                linesNum = oddNum(width) #מספר החזרות בכל סט כוכבים
+                print(linesNum , "linesnum")
+                starsnum  = width       # מספר הכוכבים בכל שורה
+                for starsnum in range(1, width+1, 2): #לולאה שעוברת על המגדל ומדפיסה את הכוכבים
+                    if starsnum == width or starsnum == 1:
+                        print(int((width - starsnum) / 2) * " " , "*" * starsnum )
+                    elif starsnum == 3:
+                        while index < ((int((hight-2) /(linesNum))) + int(((hight-2) % (linesNum)))):
+                            print(int((width - starsnum)/2) * " ",starsnum * "*" )
+                            index += 1
+                        index = 0
+                    else:
+                        while index < int((hight-2) / (linesNum)):
+                            print(int(((width - starsnum)/2)) * " ",starsnum * "*")
+                            index+=1
+                        index = 0
+    
     # print("tria - - hight  ", hight , "  width   " , width)
 
 def main():
